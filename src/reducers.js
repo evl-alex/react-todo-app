@@ -11,26 +11,21 @@ const initialState = {
   todos: [
      {
         id: 0,
-        text: 'Убрать блевотину с порога',
-        completed: false
+        text: 'Write awesome application',
+        completed: true
      },
      {
         id: 1,
-        text: 'Купить туалетную бумагу',
+        text: 'Share it on Github',
         completed: true
      },
      {
         id: 2,
-        text: 'Покурить',
-        completed: false
-     },
-     {
-        id: 3,
-        text: 'Перестать слышать голоса',
+        text: 'Go to IPO',
         completed: false
      }
   ],
-   counter: 4
+   counter: 3
 };
 
 function reduceTodo(state = initialState, action) {
