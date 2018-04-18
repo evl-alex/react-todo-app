@@ -19,6 +19,7 @@ export function addTodo(text) {
 export function toggleTodo(id) {
    return {
       type: TOGGLE_TODO,
+      //Можно и так, но посмотри https://github.com/redux-utilities/flux-standard-action
       id
    }
 }
