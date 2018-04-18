@@ -1,12 +1,11 @@
 import { connect } from 'react-redux';
 import { toggleTodo, removeTodo } from '../actions';
 import TodoList from '../components/TodoList';
-import { filterTodos } from "../helpers";
+import { getVisibleTodos } from "../selectors/visibleTodosSelector";
 
 const mapStateToProps = state => {
-   const { todos, visibility } = state;
    return {
-      todos: filterTodos(todos, visibility)
+      todos: getVisibleTodos(state)
    }
 };
 
