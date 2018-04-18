@@ -1,3 +1,5 @@
+import { createAction } from 'redux-actions';
+
 export const ADD_TODO = 'ADD_TODO';
 export const REMOVE_TODO = 'REMOVE_TODO';
 export const TOGGLE_TODO = 'TOGGLE_TODO';
@@ -9,31 +11,7 @@ export const VisibilityFilters = {
    SHOW_ACTIVE: 'SHOW_ACTIVE'
 };
 
-export function addTodo(text) {
-   return {
-      type: ADD_TODO,
-      text
-   }
-}
-
-export function toggleTodo(id) {
-   return {
-      type: TOGGLE_TODO,
-      //Можно и так, но посмотри https://github.com/redux-utilities/flux-standard-action
-      id
-   }
-}
-
-export function removeTodo(id) {
-   return {
-      type: REMOVE_TODO,
-      id
-   }
-}
-
-export function setVisibilityFilter(filter) {
-   return {
-      type: SET_VISIBILITY_FILTER,
-      filter
-   }
-}
+export const addTodo = createAction(ADD_TODO);
+export const toggleTodo = createAction(TOGGLE_TODO);
+export const removeTodo = createAction(REMOVE_TODO);
+export const setVisibilityFilter = createAction(SET_VISIBILITY_FILTER);

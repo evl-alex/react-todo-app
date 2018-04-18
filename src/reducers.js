@@ -32,7 +32,7 @@ function reduceTodo(state = initialState, action) {
    switch (action.type) {
       case SET_VISIBILITY_FILTER:
          return Object.assign({}, state, {
-            visibility: action.filter
+            visibility: action.payload
          });
 
       case ADD_TODO:
@@ -41,7 +41,7 @@ function reduceTodo(state = initialState, action) {
                ...state.todos,
                {
                   id: state.counter,
-                  text: action.text,
+                  text: action.payload,
                   completed: false
                }
             ],
@@ -51,7 +51,7 @@ function reduceTodo(state = initialState, action) {
       case TOGGLE_TODO:
          return Object.assign({}, state, {
             todos: state.todos.map((todo) => {
-               if (action.id === todo.id) {
+               if (action.payload === todo.id) {
                   todo.completed = !todo.completed;
                   return todo;
                }
@@ -63,7 +63,7 @@ function reduceTodo(state = initialState, action) {
       case REMOVE_TODO:
          return Object.assign({}, state, {
             todos: state.todos.filter((todo) => {
-               return (action.id !== todo.id);
+               return (action.payload !== todo.id);
             })
          });
 
