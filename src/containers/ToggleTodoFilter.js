@@ -25,10 +25,8 @@ const mapStateToProps = state => {
    }
 };
 
-const mapDispatchToProps = dispatch => {
-   return {
-      onFilterClick: filter => dispatch(setVisibilityFilter(filter))
-   }
+const mapDispatchToProps = {
+   onFilterClick: setVisibilityFilter
 };
 
 const ToggleTodoFilter = connect(
